@@ -1,0 +1,16 @@
+<?php
+
+$title = 'Add new album';
+$this->headTitle($title);
+?>
+    <h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$this->form->setAttribute('action', $this->url('form.post'));
+$this->form->prepare();
+
+echo $this->form()->openTag($this->form);
+echo $this->formHidden($this->form->get('id'));
+echo $this->formRow($this->form->get('title'));
+echo $this->formRow($this->form->get('artist'));
+echo $this->formSubmit($this->form->get('submit'));
+echo $this->form()->closeTag();
